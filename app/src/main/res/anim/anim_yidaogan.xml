@@ -2,6 +2,7 @@
 <set xmlns:android="http://schemas.android.com/apk/res/android"
     android:interpolator="@android:anim/decelerate_interpolator"
     android:shareInterpolator="true" >
+    <!--在1.3秒的时间里，控件大小由0.95变为1-->
     <scale
         android:duration="1300"
         android:fillAfter="true"
@@ -11,7 +12,7 @@
         android:pivotY="50%"
         android:toXScale="1"
         android:toYScale="1" />
-
+    <!--透明度由0到1-->
     <alpha
         android:duration="1300"
         android:fillAfter="true"
