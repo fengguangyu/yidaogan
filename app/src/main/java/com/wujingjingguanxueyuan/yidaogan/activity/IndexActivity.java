@@ -1,11 +1,16 @@
 package com.wujingjingguanxueyuan.yidaogan.activity;
 
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.os.SystemClock;
+import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 
+import com.wujingjingguanxueyuan.yidaogan.MainActivity;
 import com.wujingjingguanxueyuan.yidaogan.R;
 import com.wujingjingguanxueyuan.yidaogan.databinding.ActivityIndexBinding;
 
@@ -15,15 +20,29 @@ import com.wujingjingguanxueyuan.yidaogan.databinding.ActivityIndexBinding;
  */
 
 public class IndexActivity extends BaseActivity{
-
     private boolean animationComplete;
-    private boolean loadTabComplete;
-    private boolean loadContentComplete;
-
     private ActivityIndexBinding binding;
+    private boolean isFirst;
+    private Handler handler = new Handler(new Handler.Callback() {
+        @Override
+        public boolean handleMessage(Message message) {
+            if (message.what == 1){
+                if (isFirst){
+                    startActivity(new Intent(IndexActivity.this, MainActivity.class));
+                }else {
+                    startActivity(new Intent(IndexActivity.this,FunctionActivity.class));
+                }
+                finish();
+            }
+            return false;
+        }
+    });
+
 //启动activity_layout布局
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //不显示状态栏
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_index);
         showAnimation();
@@ -53,20 +72,10 @@ public class IndexActivity extends BaseActivity{
         });
         SystemClock.sleep(200);
         binding.tvIndex.startAnimation(animation);
-        loadTabData();
-        loadContentData();
+
     }
-
-    private void loadTabData() {
-        // Call<List<Tab>>
-    }
-
-    private void loadContentData() {
-    }
-
-
 
     private void goMainPage() {
-       // if (animationComplete &&)
+
     }
 }
