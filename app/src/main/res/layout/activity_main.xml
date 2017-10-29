@@ -5,14 +5,52 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.wujingjingguanxueyuan.yidaogan.MainActivity">
+    <include layout="@layout/title" android:id="@+id/title_chunk"
+        android:layout_height="0dp"
+        android:layout_width="0dp"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="0dp" />
+    <!--完善资料1/2布局 用于设置性别、昵称、生日、身高-->
+    <LinearLayout
+        android:id="@+id/personal_information_page_one"
+        android:layout_width="368dp"
+        android:layout_height="495dp"
+        android:layout_below="@+id/title_chunk"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <RadioGroup
+                android:id="@+id/gender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/boy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="RadioButton" />
+
+                <RadioButton
+                    android:id="@+id/radioButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="RadioButton" />
+            </RadioGroup>
+
+        </LinearLayout>
+    </LinearLayout>
+
 
 </android.support.constraint.ConstraintLayout>
