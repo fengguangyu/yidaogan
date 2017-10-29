@@ -31,4 +31,136 @@ public class SaveKeyValue extends BaseActivity{
         }
         return result;
     }
+    /**
+     * 存入String类型的值
+     */
+    public static boolean putStringValues(String key,String values){
+        if (isUnCreate()){
+            return false;
+        }
+        editor.putString(key,values);
+        return editor.commit();
+    }
+
+    /**
+     * 取出String类型的值
+     */
+    public static String getStringValues(String key,String defValue){
+        if (isUnCreate()){
+            return null;
+        }
+        String string_value = sharedPreferences.getString(key,defValue);
+        return string_value;
+    }
+
+    /**
+     * 存入int类型的值
+     */
+    public static boolean putIntValues(String key,int values){
+        if (isUnCreate()){
+            return false;
+        }
+        editor.putInt(key, values);
+        return editor.commit();
+    }
+
+    /**
+     * 取出int类型的值
+     */
+    public static int getIntValues(String key,int defValue){
+        if (isUnCreate()){
+            return 0;
+        }
+        int int_value = sharedPreferences.getInt(key, defValue);
+        return int_value;
+    }
+
+    /**
+     * 存入long类型的值
+     */
+    public static boolean putLongValues(String key,long values){
+        if (isUnCreate()){
+            return false;
+        }
+        editor.putLong(key, values);
+        return editor.commit();
+    }
+
+    /**
+     * 取出long类型的值
+     */
+    public static long getLongValues(String key,long defValue){
+        if (isUnCreate()){
+            return 0;
+        }
+        long long_value = sharedPreferences.getLong(key, defValue);
+        return long_value;
+    }
+    /**
+     * 存入float类型的值
+     */
+    public static boolean putFloatValues(String key,float values){
+        if (isUnCreate()){
+            return false;
+        }
+        editor.putFloat(key, values);
+        return editor.commit();
+    }
+
+    /**
+     * 取出float类型的值
+     */
+    public static float getFloatValues(String key,float defValue){
+        if (isUnCreate()){
+            return 0;
+        }
+        float float_value = sharedPreferences.getFloat(key, defValue);
+        return float_value;
+    }
+
+    /**
+     * 存入boolean类型的值
+     */
+    public static boolean putBooleanValues(String key,boolean values){
+        if (isUnCreate()){
+            return false;
+        }
+        editor.putBoolean(key, values);
+        return editor.commit();
+    }
+
+    /**
+     * 取出boolean类型的值
+     */
+    public static boolean getFloatValues(String key,boolean defValue){
+        if (isUnCreate()){
+            return false;
+        }
+        boolean boolean_value = sharedPreferences.getBoolean(key, defValue);
+        return boolean_value;
+    }
+
+    /**
+     * 清空数据
+     */
+    public static boolean deleteAllValues(){
+        if (isUnCreate()){
+            return false;
+        }
+        editor.clear();
+        return editor.commit();
+    }
+
+    /**
+     * 删除指定数据
+     * @param key
+     * @return
+     */
+    public static boolean removeKeyForValues(String key){
+        if (isUnCreate()){
+            return false;
+        }
+        editor.remove(key);
+        return editor.commit();
+    }
 }
