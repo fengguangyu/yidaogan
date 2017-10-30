@@ -44,7 +44,7 @@
                     android:drawableTop="@drawable/sex_boy_selector"
                     android:gravity="center_horizontal"
                     android:text="boy"
-                    android:textSize="18sp"/>
+                    android:textSize="18sp" />
 
                 <RadioButton
                     android:id="@+id/radioButton"
@@ -61,9 +61,106 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="horizontal"
+                android:paddingBottom="20dp"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp"
+                android:paddingTop="20dp">
 
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="昵称"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/input_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/input_edit_selector"
+                    android:focusable="false"
+                    android:gravity="right"
+                    android:hint="你的名字"
+                    android:inputType="none"
+                    android:lines="1"
+                    android:textSize="18sp" />
             </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="20dp"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp"
+                android:paddingTop="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:text="生日"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/btn_gray"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/input_birthday"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:lines="1"
+                    android:text="请输入"
+                    android:textColor="@color/btn_gray"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="20dp"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp"
+                android:paddingTop="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:text="身高"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/btn_gray"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/input_height"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:text="请输入你的身高"
+                    android:textColor="@color/btn_gray"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/next"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/btn_selector1"
+                android:text="next"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
         </LinearLayout>
     </LinearLayout>
 
