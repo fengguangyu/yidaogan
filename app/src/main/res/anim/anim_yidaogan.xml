@@ -4,17 +4,17 @@
     android:shareInterpolator="true" >
     <!--在1.3秒的时间里，控件大小由0.95变为1-->
     <scale
-        android:duration="1300"
+        android:duration="1500"
         android:fillAfter="true"
-        android:fromXScale="0.95"
-        android:fromYScale="0.95"
+        android:fromXScale="0.90"
+        android:fromYScale="0.90"
         android:pivotX="50%"
         android:pivotY="50%"
         android:toXScale="1"
         android:toYScale="1" />
     <!--透明度由0到1-->
     <alpha
-        android:duration="1300"
+        android:duration="1500"
         android:fillAfter="true"
         android:fromAlpha="0"
         android:toAlpha="1" />

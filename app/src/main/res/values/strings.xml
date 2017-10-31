@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">YiDaoGan</string>
+    <string name="personal_information_one">完善资料1/2</string>
+    <string name="personal_information_two">完善资料2/2</string>
 </resources>

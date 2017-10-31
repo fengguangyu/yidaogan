@@ -5,14 +5,16 @@ import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.os.SystemClock;
+import android.view.KeyEvent;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 
+import com.romainpiel.shimmer.Shimmer;
 import com.wujingjingguanxueyuan.yidaogan.MainActivity;
 import com.wujingjingguanxueyuan.yidaogan.R;
 import com.wujingjingguanxueyuan.yidaogan.databinding.ActivityIndexBinding;
+import com.wujingjingguanxueyuan.yidaogan.utils.SaveKeyValue;
 
 /**
  * Created by 光 on 2017/10/23.
@@ -20,7 +22,6 @@ import com.wujingjingguanxueyuan.yidaogan.databinding.ActivityIndexBinding;
  */
 
 public class IndexActivity extends BaseActivity{
-    private boolean animationComplete;
     private ActivityIndexBinding binding;
     private boolean isFirst;
     private Handler handler = new Handler(new Handler.Callback() {
@@ -30,7 +31,7 @@ public class IndexActivity extends BaseActivity{
                 if (isFirst){
                     startActivity(new Intent(IndexActivity.this, MainActivity.class));
                 }else {
-                    startActivity(new Intent(IndexActivity.this,FunctionActivity.class));
+                    startActivity(new Intent(IndexActivity.this,MainActivity.class));
                 }
                 finish();
             }
@@ -46,6 +47,8 @@ public class IndexActivity extends BaseActivity{
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_index);
         showAnimation();
+        Shimmer shimmer = new Shimmer();
+        shimmer.start(binding.tvIndex);
     }
 //启动显示动画
     private void showAnimation() {
@@ -56,12 +59,8 @@ public class IndexActivity extends BaseActivity{
             public void onAnimationStart(Animation animation) {
 
             }
-          // 动画演示完后500毫秒，执行goMainPage方法
-            //sleep方法是在返回之前等待给定的毫秒数
             @Override
             public void onAnimationEnd(Animation animation) {
-                SystemClock.sleep(500);
-                animationComplete = true;
                 goMainPage();
             }
 
@@ -70,12 +69,21 @@ public class IndexActivity extends BaseActivity{
 
             }
         });
-        SystemClock.sleep(200);
         binding.tvIndex.startAnimation(animation);
 
     }
 
     private void goMainPage() {
+        int  count = SaveKeyValue.getIntValues("count",0);
+        isFirst = (count == 0)? true:false;
+        handler.sendEmptyMessageDelayed(1,3000);
+    }
 
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode==KeyEvent.KEYCODE_BACK){
+            return false;
+        }
+        return false;
     }
 }
