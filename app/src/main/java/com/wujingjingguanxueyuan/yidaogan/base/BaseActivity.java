@@ -23,6 +23,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         getLayoutToView();
         initValues();
         setActivityTitle();
