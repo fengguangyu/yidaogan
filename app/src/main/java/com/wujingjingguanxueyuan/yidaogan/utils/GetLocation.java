@@ -113,6 +113,7 @@ public class GetLocation {
                 SaveKeyValues.putStringValues("city" ,location.getCity().substring(0,location.getCity().length()-1));
                 mLocationClient.stop();
             }
+
         }
 
     }

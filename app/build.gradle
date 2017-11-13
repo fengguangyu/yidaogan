@@ -41,4 +41,5 @@ dependencies {
     compile files('libs/BaiduLBS_Android.jar')
     testCompile 'junit:junit:4.12'
     compile files('libs/achartengine-1.0.0.jar')
+    compile files('libs/BaiduLBS_Android.jar')
 }

@@ -1,10 +1,14 @@
 package com.wujingjingguanxueyuan.yidaogan.fragment;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
+import com.wujingjingguanxueyuan.yidaogan.activity.WhereActivity;
 import com.wujingjingguanxueyuan.yidaogan.base.BaseFragment;
 
 import com.wujingjingguanxueyuan.yidaogan.R;
@@ -28,8 +32,41 @@ import com.wujingjingguanxueyuan.yidaogan.R;
  */
 public class HeartFragment extends BaseFragment {
     private View view;
+    private Button button;
+    private Context context;
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        this.context = context;
+    }
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_find,null);
+        view = inflater.inflate(R.layout.fragment_heart,null);
+        initView();
+        setNature();
         return view;
-}}
+    }
+
+    private void setNature() {
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                switch (v.getId()){
+                    case R.id.button:
+                        startActivity(new Intent(context, WhereActivity.class));
+                        break;
+                    default:
+                        break;
+                }
+
+
+            }
+        });
+    }
+
+    private void initView() {
+        button = (Button) view.findViewById(R.id.button);
+    }
+
+}
 
