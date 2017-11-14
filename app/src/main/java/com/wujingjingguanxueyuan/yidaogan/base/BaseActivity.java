@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.baidu.mapapi.SDKInitializer;
 import com.wujingjingguanxueyuan.yidaogan.R;
 
 /**
@@ -23,7 +24,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        SDKInitializer.initialize(getApplicationContext());
         getLayoutToView();
         initValues();
         setActivityTitle();
