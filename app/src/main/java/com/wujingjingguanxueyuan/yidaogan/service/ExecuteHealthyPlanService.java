@@ -26,7 +26,7 @@ import java.util.List;
  * 执行运动计划的服务
  */
 public class ExecuteHealthyPlanService extends Service {
-    public static final String planSaveService = "mrkj.healthylife.PLAN";
+    public static final String planSaveService = "com.wujingjingguanxueyuan.yidaogan.PLAN";
     //用于操作数据库
     private DatasDao datasDao;
     private Intent toBroadReciver;

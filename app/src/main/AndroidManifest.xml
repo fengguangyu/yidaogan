@@ -35,7 +35,8 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.GET_TASKS" />
-
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CONTROL_KEYGUARD"/>
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
 
@@ -48,7 +49,7 @@
         android:theme="@style/MyTheme">
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
-            android:value="ocavhAjeuzm9BSAvfHL1m8VjEHtTzzR3" />
+            android:value="6ksULaLIMnef9IgqUheKaLlo1lAyDvvR" />
 
         <service
             android:name="com.baidu.location.f"
@@ -120,6 +121,9 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".activity.WhereActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.WeatherMain"
             android:screenOrientation="portrait"/>
         <activity
             android:name=".activity.SportMessageActivity"

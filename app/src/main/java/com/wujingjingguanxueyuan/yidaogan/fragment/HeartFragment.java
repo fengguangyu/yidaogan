@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.wujingjingguanxueyuan.yidaogan.activity.WeatherMain;
 import com.wujingjingguanxueyuan.yidaogan.activity.WhereActivity;
 import com.wujingjingguanxueyuan.yidaogan.base.BaseFragment;
 
@@ -30,9 +31,10 @@ import com.wujingjingguanxueyuan.yidaogan.R;
  * 这里用到的图标引擎libs包中都已提供
  * Created by Administrator on 2016/5/27.
  */
-public class HeartFragment extends BaseFragment {
+public class HeartFragment extends BaseFragment implements View.OnClickListener {
     private View view;
     private Button button;
+    private Button button2;
     private Context context;
 
     @Override
@@ -43,29 +45,30 @@ public class HeartFragment extends BaseFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_heart,null);
         initView();
-        setNature();
         return view;
     }
 
-    private void setNature() {
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                switch (v.getId()){
-                    case R.id.button:
-                        startActivity(new Intent(context, WhereActivity.class));
-                        break;
-                    default:
-                        break;
-                }
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.button:
+                startActivity(new Intent(context, WhereActivity.class));
+                break;
+            case R.id.button2:
+                startActivity(new Intent(context, WeatherMain.class));
+                break;
+            default:
+                break;
+        }
 
 
-            }
-        });
     }
 
     private void initView() {
         button = (Button) view.findViewById(R.id.button);
+        button.setOnClickListener(this);
+        button2 = (Button) view.findViewById(R.id.button2);
+        button2.setOnClickListener(this);
     }
 
 }

@@ -28,7 +28,7 @@ import java.util.TimeZone;
  * @author Administrator
  */
 public class StepCounterService extends Service {
-    public static final String alarmSaveService = "mrkj.healthylife.SETALARM";
+    public static final String alarmSaveService = "com.wujingjingguanxueyuan.yidaogan.SETALARM";
     private static final String TAG = "StepCounterService";
     public static Boolean FLAG = false;// 服务运行标志
 

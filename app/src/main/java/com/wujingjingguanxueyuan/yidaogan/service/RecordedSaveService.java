@@ -23,7 +23,7 @@ import java.util.Map;
  * 记录保存服务(此处用于记录值)
  */
 public class RecordedSaveService extends Service {
-    public static final String cancelSaveService = "mrkj.healthylife.RECORDED";
+    public static final String cancelSaveService = "com.wujingjingguanxueyuan.yidaogan.RECORDED";
     private DatasDao datasDao;
     public RecordedSaveService() {
     }

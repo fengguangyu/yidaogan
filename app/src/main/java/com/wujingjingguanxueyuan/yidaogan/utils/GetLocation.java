@@ -112,6 +112,8 @@ public class GetLocation {
             if (location.getLocType() == 161){
                 SaveKeyValues.putStringValues("city" ,location.getCity().substring(0,location.getCity().length()-1));
                 mLocationClient.stop();
+            } else {
+                mLocationClient.stop();
             }
 
         }

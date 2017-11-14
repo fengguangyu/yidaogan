@@ -7,7 +7,7 @@ import android.view.LayoutInflater;
 /**
  * Created by Administrator on 2016/5/27.
  */
-public class BaseFragment extends Fragment {
+public abstract class BaseFragment extends Fragment {
 
     public LayoutInflater inflater;//布局填充器
     /**
