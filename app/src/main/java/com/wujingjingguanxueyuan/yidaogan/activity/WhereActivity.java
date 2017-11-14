@@ -16,6 +16,7 @@ import com.baidu.mapapi.map.BaiduMap;
 import com.baidu.mapapi.map.MapStatusUpdate;
 import com.baidu.mapapi.map.MapStatusUpdateFactory;
 import com.baidu.mapapi.map.MapView;
+import com.baidu.mapapi.map.MyLocationData;
 import com.baidu.mapapi.model.LatLng;
 import com.wujingjingguanxueyuan.yidaogan.R;
 import com.wujingjingguanxueyuan.yidaogan.base.BaseActivity;
@@ -52,6 +53,7 @@ public class WhereActivity extends BaseActivity{
         super.onDestroy();
         mLocationClient.stop();
         mapView.onDestroy();
+        baiduMap.setMyLocationEnabled(false);
     }
 //onResume()是onPause()（通常是当前的acitivty被暂停了，比如被另一个透明或者Dialog样式的Activity覆盖了），之后dialog取消，activity回到可交互状态，调用onResume()。
 
@@ -111,6 +113,7 @@ public class WhereActivity extends BaseActivity{
         positionText = (TextView) findViewById(R.id.position_text_view);
         mapView = (MapView) findViewById(R.id.bmapView);
         baiduMap = mapView.getMap();
+        baiduMap.setMyLocationEnabled(true);
     }
 
     @Override
@@ -150,6 +153,12 @@ public class WhereActivity extends BaseActivity{
             baiduMap.animateMapStatus(update);
             isFirstLocate = false;
         }
+        MyLocationData.Builder locationBuilder = new MyLocationData.
+                Builder();
+        locationBuilder.latitude(location.getLatitude());
+        locationBuilder.longitude(location.getLongitude());
+        MyLocationData locationData = locationBuilder.build();
+        baiduMap.setMyLocationData(locationData);
     }
 
     public class myLocationListener implements BDLocationListener {
