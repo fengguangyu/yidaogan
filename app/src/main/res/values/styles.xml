@@ -33,4 +33,8 @@
         <item name="android:backgroundDimAmount">0.3</item>
         <item name="android:windowAnimationStyle">@null</item>
     </style>
+    <style name="TextLabel" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Label color in TRUE state and bar color FALSE and TRUE State -->
+        <item name="colorControlActivated">#FFCC00</item>
+    </style>
 </resources>

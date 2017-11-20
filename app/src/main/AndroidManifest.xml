@@ -51,6 +51,9 @@
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="6ksULaLIMnef9IgqUheKaLlo1lAyDvvR" />
+        <meta-data
+            android:name="Bmob_APP_KEY"
+            android:value="8655e4bc5bd9f9f1626ec77e94307c82"/>
 
         <service
             android:name="com.baidu.location.f"
@@ -146,6 +149,10 @@
                  <category android:name="android.intent.category.LAUNCHER" />
              </intent-filter>-->
         </activity>
+        <activity android:name=".activity.LogActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activity.RegActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

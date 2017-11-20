@@ -23,9 +23,9 @@ public class LaunchActivity extends AppCompatActivity {
         public boolean handleMessage(Message msg) {
             if (msg.what == 1) {
                 if (isFirst){
-                    startActivity(new Intent(LaunchActivity.this, MainActivity.class));
+                    startActivity(new Intent(LaunchActivity.this, LogActivity.class));
                 }else {
-                    startActivity(new Intent(LaunchActivity.this, FunctionActivity.class));
+                    startActivity(new Intent(LaunchActivity.this,LogActivity.class));
                 }
                 finish();
             }
