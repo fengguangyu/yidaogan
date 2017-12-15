@@ -1,13 +1,21 @@
 package com.wujingjingguanxueyuan.yidaogan.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBar;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.KeyEvent;
+import android.view.MenuItem;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import com.wujingjingguanxueyuan.yidaogan.R;
 import com.wujingjingguanxueyuan.yidaogan.base.BaseActivity;
 import com.wujingjingguanxueyuan.yidaogan.fragment.FindFragment;
 import com.wujingjingguanxueyuan.yidaogan.fragment.HeartFragment;
@@ -15,8 +23,6 @@ import com.wujingjingguanxueyuan.yidaogan.fragment.MineFragment;
 import com.wujingjingguanxueyuan.yidaogan.fragment.SportFragment;
 import com.wujingjingguanxueyuan.yidaogan.utils.Constant;
 import com.wujingjingguanxueyuan.yidaogan.utils.SaveKeyValues;
-
-import com.wujingjingguanxueyuan.yidaogan.R;
 
 /**
  * 功能界面
@@ -34,6 +40,8 @@ public class FunctionActivity extends BaseActivity implements RadioGroup.OnCheck
     private FindFragment findFragment;//发现
     private HeartFragment heartFragment;//心率
     private MineFragment mineFragment;//我的
+
+    private DrawerLayout mDrawerLayout;
     /**
      * 设置标题
      */
@@ -85,6 +93,27 @@ public class FunctionActivity extends BaseActivity implements RadioGroup.OnCheck
         find_btn = (RadioButton) findViewById(R.id.find_btn);
         heart_btn = (RadioButton) findViewById(R.id.heart_btn);
         mine_btn = (RadioButton) findViewById(R.id.mine_btn);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.main_toolbar);
+        setSupportActionBar(toolbar);
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        NavigationView navView = (NavigationView) findViewById(R.id.navigation_view);
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+            actionBar.setHomeAsUpIndicator(R.drawable.ic_menu);
+        }
+        navView.setCheckedItem(R.id.nav_call);
+        navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.nav_location:
+                        startActivity(new Intent(FunctionActivity.this,WhereActivity.class));
+                        break;
+                }
+                return true;
+            }
+        });
     }
 
     /**
@@ -163,5 +192,24 @@ public class FunctionActivity extends BaseActivity implements RadioGroup.OnCheck
             return true;
         }
         return super.onKeyDown(keyCode, event);
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                mDrawerLayout.openDrawer(GravityCompat.START);
+                break;
+            case R.id.backup:
+                Toast.makeText(this, "You clicked Backup", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.delete:
+                Toast.makeText(this, "You clicked Delete", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.settings:
+                Toast.makeText(this, "You clicked Settings", Toast.LENGTH_SHORT).show();
+                break;
+            default:
+        }
+        return true;
     }
 }
