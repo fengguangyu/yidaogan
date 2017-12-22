@@ -44,7 +44,7 @@
     <application
         android:name=".application.DemoApplication"
         android:allowBackup="true"
-        android:icon="@mipmap/icon"
+        android:icon="@mipmap/wjxy1"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/MyTheme">
@@ -73,9 +73,9 @@
         </receiver>
         <receiver android:name=".receiver.FunctionBroadcastReceiver">
             <intent-filter>
-                <action android:name="mrkj.healthylife.RECORDED" />
-                <action android:name="mrkj.healthylife.SETALARM" />
-                <action android:name="mrkj.healthylife.PLAN" />
+                <action android:name="com.wujingjingguanxueyuan.yidaogan.RECORDED" />
+                <action android:name="com.wujingjingguanxueyuan.yidaogan.SETALARM" />
+                <action android:name="com.wujingjingguanxueyuan.yidaogan.PLAN" />
             </intent-filter>
         </receiver>
 
