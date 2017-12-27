@@ -1,6 +1,5 @@
 package com.wujingjingguanxueyuan.yidaogan.receiver;
 
-import android.app.Notification;
 import android.app.NotificationManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -10,8 +9,6 @@ import android.widget.Toast;
 
 import com.wujingjingguanxueyuan.yidaogan.service.ExecuteHealthyPlanService;
 import com.wujingjingguanxueyuan.yidaogan.service.StepCounterService;
-
-import com.wujingjingguanxueyuan.yidaogan.R;
 
 /**
  * 用于开机自启动
@@ -29,12 +26,21 @@ public class BootBroadcastReceiver extends BroadcastReceiver {
         Toast.makeText(context, "启动了", Toast.LENGTH_SHORT).show();
         Log.e("TAG", "开机自动服务自动启动.....");
         NotificationManager manager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
-        Notification.Builder notification = new Notification.Builder(context);
-        notification.setContentTitle("KeepFit");
-        notification.setContentText("计步开始了！");
-        notification.setSmallIcon(R.mipmap.mrkj_do_sport);
-        notification.setDefaults(Notification.DEFAULT_ALL);
-        notification.setAutoCancel(true);
-        manager.notify(1, notification.getNotification());
+//        Notification notification = new NotificationCompat.Builder(context,"YiDaoGan")
+//                .setContentTitle("YiDaoGan")
+//                .setContentText("计步开始了！")
+//                .setSmallIcon(R.mipmap.wjxy1)
+//                .setDefaults(Notification.DEFAULT_ALL)
+//                .setAutoCancel(true)
+//                .build();
+//        manager.notify(1,notification);
+//        Notification.Builder notification = new Notification.Builder(context);
+//        notification.setContentTitle("KeepFit");
+//        notification.setContentText("计步开始了！");
+//        notification.setSmallIcon(R.mipmap.mrkj_do_sport);
+//        notification.setDefaults(Notification.DEFAULT_ALL);
+//        notification.setAutoCancel(true);
+//        manager.notify(1, notification.getNotification());
+
     }
 }

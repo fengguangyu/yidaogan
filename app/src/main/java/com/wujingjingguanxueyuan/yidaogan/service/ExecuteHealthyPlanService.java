@@ -78,7 +78,7 @@ public class ExecuteHealthyPlanService extends Service {
                     int count = cursor.getCount();
                     cursor.close();
                     if (count == 0){
-                        sendBroadcast(new Intent(this, FunctionBroadcastReceiver.class).setAction("mrkj.healthylife.PLAN").putExtra("mode", 3));
+                        sendBroadcast(new Intent(this, FunctionBroadcastReceiver.class).setAction("com.wujingjingguanxueyuan.yidaogan.PLAN").putExtra("mode", 3));
                     }else {
 //                        compareAllData();
                         if (count > 1){
@@ -375,7 +375,7 @@ public class ExecuteHealthyPlanService extends Service {
                     Log.e("通知","关闭服务");
                     //清空表中数据
                     datasDao.clear("plans");
-                    sendBroadcast(new Intent(this, FunctionBroadcastReceiver.class).setAction("mrkj.healthylife.PLAN").putExtra("mode", 3));
+                    sendBroadcast(new Intent(this, FunctionBroadcastReceiver.class).setAction("com.wujingjingguanxueyuan.yidaogan.PLAN").putExtra("mode", 3));
                 }
             }else{
                 Log.e("数据以增加","将执行排列后再设置定时！");

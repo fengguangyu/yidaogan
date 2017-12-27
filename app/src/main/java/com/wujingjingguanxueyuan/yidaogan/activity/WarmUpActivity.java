@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import com.wujingjingguanxueyuan.yidaogan.application.DemoApplication;
 import com.wujingjingguanxueyuan.yidaogan.base.BaseActivity;
-import com.wujingjingguanxueyuan.yidaogan.fragment.FindFragment;
+import com.wujingjingguanxueyuan.yidaogan.fragment.TrainingFragment;
 
 import com.wujingjingguanxueyuan.yidaogan.R;
 
@@ -63,7 +63,7 @@ public class WarmUpActivity extends BaseActivity {
     @Override
     protected void setViewsFunction() {
         time.setText("12秒");
-        count.setText(FindFragment.cishu);
+        count.setText(TrainingFragment.cishu);
         type.setText(DemoApplication.shuoming[what]);
         imageView.setImageBitmap(DemoApplication.bitmaps[what]);
     }

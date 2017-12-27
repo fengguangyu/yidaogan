@@ -17,7 +17,7 @@
         <item name="android:textColor">@drawable/text_color_blue_selector</item>
     </style>
     <style name="Theme.BackgroundTranslucent" parent="Theme.AppCompat.NoActionBar">
-        <item name="android:windowBackground">@mipmap/mrkj</item>
+        <item name="android:windowBackground">@mipmap/wjxy</item>
     </style>
     <style name="transcutestyle" parent="Theme.AppCompat.NoActionBar">
         <item name="android:windowFrame">@android:color/transparent</item>

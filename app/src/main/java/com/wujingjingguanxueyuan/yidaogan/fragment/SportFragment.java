@@ -26,8 +26,6 @@ import com.wujingjingguanxueyuan.yidaogan.utils.HttpUtils;
 import com.wujingjingguanxueyuan.yidaogan.utils.SaveKeyValues;
 import com.wujingjingguanxueyuan.yidaogan.utils.StepDetector;
 
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
 import java.text.DecimalFormat;
 
 import mrkj.library.wheelview.circlebar.CircleBar;
@@ -161,18 +159,6 @@ public class SportFragment extends Fragment {//此处直接继承Fragment即可
      * 初始化相关的属性
      */
     private void initValues(){
-        //1、获取所在城市并获取该城市的天气信息
-        query_city_name = SaveKeyValues.getStringValues("city", "北京");
-        try {
-            //使用URLEncoder这个方法
-            // 请在gradle中依赖
-            // compile 'org.apache.httpcomponents:httpcore:4.4.4'
-            weather_url = String.format(Constant.GET_DATA,
-                    URLEncoder.encode(query_city_name, "utf-8"));
-            downLoadDataFromNet();//下载网络数据
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
         //2、获取计算里程和热量的相关参数-->默认步数：1000、步长：70cm、体重：50kg
         isStop = false;
         duration = 800;
@@ -224,9 +210,6 @@ public class SportFragment extends Fragment {//此处直接继承Fragment即可
      */
     private void initView() {
         circleBar = (CircleBar) view.findViewById(R.id.show_progress);
-        city_name = (TextView) view.findViewById(R.id.city_name);
-        city_temperature = (TextView) view.findViewById(R.id.temperature);
-        city_air_quality = (TextView) view.findViewById(R.id.air_quality);
         warm_btn = (ImageButton) view.findViewById(R.id.warm_up);
         show_mileage = (TextView) view.findViewById(R.id.mileage_txt);
         show_heat = (TextView) view.findViewById(R.id.heat_txt);

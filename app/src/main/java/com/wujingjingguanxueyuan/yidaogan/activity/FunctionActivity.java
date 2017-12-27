@@ -17,12 +17,13 @@ import android.widget.Toast;
 
 import com.wujingjingguanxueyuan.yidaogan.R;
 import com.wujingjingguanxueyuan.yidaogan.base.BaseActivity;
-import com.wujingjingguanxueyuan.yidaogan.fragment.FindFragment;
 import com.wujingjingguanxueyuan.yidaogan.fragment.HeartFragment;
 import com.wujingjingguanxueyuan.yidaogan.fragment.MineFragment;
 import com.wujingjingguanxueyuan.yidaogan.fragment.SportFragment;
+import com.wujingjingguanxueyuan.yidaogan.fragment.TrainingFragment;
 import com.wujingjingguanxueyuan.yidaogan.utils.Constant;
 import com.wujingjingguanxueyuan.yidaogan.utils.SaveKeyValues;
+
 
 /**
  * 功能界面
@@ -34,10 +35,10 @@ public class FunctionActivity extends BaseActivity implements RadioGroup.OnCheck
     private int load_values;//判断加载fragment的变量
     //控件
     private RadioGroup radioGroup;//切换按钮的容器
-    private RadioButton sport_btn,find_btn,heart_btn,mine_btn;//切换按钮
+    private RadioButton sport_btn,training_btn,weather_btn,mine_btn;//切换按钮
     //碎片
     private SportFragment sportFragment;//运动
-    private FindFragment findFragment;//发现
+    private TrainingFragment trainingFragment;//发现
     private HeartFragment heartFragment;//心率
     private MineFragment mineFragment;//我的
 
@@ -69,7 +70,7 @@ public class FunctionActivity extends BaseActivity implements RadioGroup.OnCheck
         Log.e("加载判断值", load_values + "");
         //实例化相关碎片
         sportFragment = new SportFragment();
-        findFragment = new FindFragment();
+        trainingFragment = new TrainingFragment();
         heartFragment = new HeartFragment();
         mineFragment = new MineFragment();
         //初始化界面
@@ -79,7 +80,7 @@ public class FunctionActivity extends BaseActivity implements RadioGroup.OnCheck
             sportFragment.setArguments(bundle);
             getSupportFragmentManager().beginTransaction().add(R.id.frag_home,sportFragment,Constant.SPORT_TAG).commit();
         }else {
-            getSupportFragmentManager().beginTransaction().add(R.id.frag_home,findFragment,Constant.FIND_TAG).commit();
+            getSupportFragmentManager().beginTransaction().add(R.id.frag_home,trainingFragment,Constant.FIND_TAG).commit();
         }
     }
 
@@ -90,8 +91,8 @@ public class FunctionActivity extends BaseActivity implements RadioGroup.OnCheck
     protected void initViews() {
         radioGroup = (RadioGroup) findViewById(R.id.ui_btn_group);
         sport_btn = (RadioButton) findViewById(R.id.sport_btn);
-        find_btn = (RadioButton) findViewById(R.id.find_btn);
-        heart_btn = (RadioButton) findViewById(R.id.heart_btn);
+        training_btn = (RadioButton) findViewById(R.id.training_btn);
+        weather_btn = (RadioButton) findViewById(R.id.weather_btn);
         mine_btn = (RadioButton) findViewById(R.id.mine_btn);
         Toolbar toolbar = (Toolbar) findViewById(R.id.main_toolbar);
         setSupportActionBar(toolbar);
@@ -132,7 +133,7 @@ public class FunctionActivity extends BaseActivity implements RadioGroup.OnCheck
         if (load_values == Constant.TURN_MAIN){
             sport_btn.setChecked(true);
         }else {
-            find_btn.setChecked(true);
+            training_btn.setChecked(true);
         }
     }
 
@@ -154,12 +155,12 @@ public class FunctionActivity extends BaseActivity implements RadioGroup.OnCheck
                     transaction.replace(R.id.frag_home,sportFragment,Constant.SPORT_TAG);
                 }
                 break;
-            case R.id.find_btn://发现
-                if (!findFragment.isAdded()){
-                    transaction.replace(R.id.frag_home, findFragment,Constant.FIND_TAG);
+            case R.id.training_btn://发现
+                if (!trainingFragment.isAdded()){
+                    transaction.replace(R.id.frag_home, trainingFragment,Constant.FIND_TAG);
                 }
                 break;
-            case R.id.heart_btn://心率
+            case R.id.weather_btn://心率
                 if (!heartFragment.isAdded()){
                     transaction.replace(R.id.frag_home,heartFragment,Constant.HEART_TAG);
                 }

@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import com.wujingjingguanxueyuan.yidaogan.R;
 import com.wujingjingguanxueyuan.yidaogan.activity.SettingHealthyHealthyActivity;
-import com.wujingjingguanxueyuan.yidaogan.fragment.FindFragment;
+import com.wujingjingguanxueyuan.yidaogan.fragment.TrainingFragment;
 
 import java.util.List;
 import java.util.Map;
@@ -24,7 +24,7 @@ public class MyAdapter extends BaseAdapter {
 
     private LayoutInflater inflater;//布局填充器
     private List<Map<String,Object>> list;//数据源
-    private FindFragment findFragment;//fragment
+    private TrainingFragment findFragment;//fragment
     private Context context;//上下文
 
     /**
@@ -33,7 +33,7 @@ public class MyAdapter extends BaseAdapter {
      * @param list
      * @param findFragment
      */
-    public MyAdapter(Context context, List<Map<String,Object>> list, FindFragment findFragment){
+    public MyAdapter(Context context, List<Map<String,Object>> list, TrainingFragment findFragment){
         this.list = list;
         inflater = LayoutInflater.from(context);
         this.findFragment = findFragment;

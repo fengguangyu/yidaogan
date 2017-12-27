@@ -19,7 +19,7 @@ import com.wujingjingguanxueyuan.yidaogan.R;
 import com.wujingjingguanxueyuan.yidaogan.application.DemoApplication;
 import com.wujingjingguanxueyuan.yidaogan.base.BaseActivity;
 import com.wujingjingguanxueyuan.yidaogan.db.DatasDao;
-import com.wujingjingguanxueyuan.yidaogan.fragment.FindFragment;
+import com.wujingjingguanxueyuan.yidaogan.fragment.TrainingFragment;
 import com.wujingjingguanxueyuan.yidaogan.service.ExecuteHealthyPlanService;
 import com.wujingjingguanxueyuan.yidaogan.utils.Constant;
 
@@ -212,7 +212,7 @@ public class MinePlanActivity extends BaseActivity {
             holder.date.setText(map.get("date").toString());//时间段
             holder.hint_time.setText("提示时间："+map.get("time").toString());//时间点
             holder.name.setText(DemoApplication.shuoming[((int) map.get("type"))]);//类型
-            holder.count.setText(FindFragment.cishu);
+            holder.count.setText(TrainingFragment.cishu);
             holder.change.setText("更改计划");
             holder.delete.setText("删除计划");
             holder.image.setImageBitmap(DemoApplication.bitmaps[((int) map.get("type"))]);//类型

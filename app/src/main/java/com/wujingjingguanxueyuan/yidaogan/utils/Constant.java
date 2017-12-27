@@ -13,15 +13,10 @@ public class Constant {
     public static final String FIND_TAG = "find";//发现TAG
     public static final String HEART_TAG = "heart";//心率TAG
     public static final String MINE_TAG = "mine";//我的TAG
-    //天气预报接口
-    //APP_KEY
-    public static final String APP_KEY = "06ba330de85cf5484fedbcd1c2247e28";
-    //天气预报数据接口
-    public static final String GET_DATA = "http://op.juhe.cn/onebox/weather/query?cityname=%s&key="+APP_KEY;
-//    http://op.juhe.cn/onebox/weather/query?cityname=长春&key=06ba330de85cf5484fedbcd1c2247e28
+
 
     //文件夹名
-    public static final String file_name = "keep_fit";
+    public static final String file_name = "yidaogan";
     public static final String head_image = "head.jpg";
 
 

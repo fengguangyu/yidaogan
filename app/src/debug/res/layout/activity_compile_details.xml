@@ -20,7 +20,7 @@
             android:layout_margin="@dimen/width_size_5"
             android:layout_width="@dimen/width_size_80"
             android:layout_height="@dimen/width_size_80"
-            android:src="@mipmap/mrkj_girl_blue"
+            android:src="@mipmap/girl_blue"
             app:border_color="@android:color/transparent"
             />
         <TextView

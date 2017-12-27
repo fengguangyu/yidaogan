@@ -6,8 +6,10 @@ import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
+import com.wujingjingguanxueyuan.yidaogan.R;
 import com.wujingjingguanxueyuan.yidaogan.activity.PlayActivity;
 import com.wujingjingguanxueyuan.yidaogan.application.DemoApplication;
 import com.wujingjingguanxueyuan.yidaogan.service.ExecuteHealthyPlanService;
@@ -15,8 +17,6 @@ import com.wujingjingguanxueyuan.yidaogan.service.RecordedSaveService;
 import com.wujingjingguanxueyuan.yidaogan.service.StepCounterService;
 import com.wujingjingguanxueyuan.yidaogan.utils.Constant;
 import com.wujingjingguanxueyuan.yidaogan.utils.SaveKeyValues;
-
-import com.wujingjingguanxueyuan.yidaogan.R;
 
 /**
  * 用于接收定时服务发送的广播
@@ -95,13 +95,22 @@ public class FunctionBroadcastReceiver extends BroadcastReceiver {
         intent.putExtra("what",1);
         intent.putExtra("do_hint",1);
         PendingIntent pendingIntent = PendingIntent.getActivity(context,0,intent, PendingIntent.FLAG_UPDATE_CURRENT);
-        Notification.Builder builder = new Notification.Builder(context);
-        builder.setContentTitle("KeepFit");
-        builder.setContentText(messages);
-        builder.setSmallIcon(R.mipmap.mrkj_do_sport);
-        builder.setDefaults(Notification.DEFAULT_ALL);
-        builder.setAutoCancel(true);
-        builder.setContentIntent(pendingIntent);
-        manager.notify(0, builder.getNotification());
+        Notification build = new NotificationCompat.Builder(context,"YiDaoGan")
+                .setContentTitle("YiDaoGan")
+                .setContentText(messages)
+                .setSmallIcon(R.mipmap.wjxy1)
+                .setDefaults(Notification.DEFAULT_ALL)
+                .setAutoCancel(true)
+                .setContentIntent(pendingIntent)
+                .build();
+        manager.notify(0,build);
+//        Notification.Builder builder = new Notification.Builder(context);
+//        builder.setContentTitle("KeepFit");
+//        builder.setContentText(messages);
+//        builder.setSmallIcon(R.mipmap.mrkj_do_sport);
+//        builder.setDefaults(Notification.DEFAULT_ALL);
+//        builder.setAutoCancel(true);
+//        builder.setContentIntent(pendingIntent);
+//        manager.notify(0, builder.getNotification());
     }
 }

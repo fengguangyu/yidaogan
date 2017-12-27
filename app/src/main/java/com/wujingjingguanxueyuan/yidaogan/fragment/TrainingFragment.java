@@ -30,9 +30,10 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Created by Administrator on 2016/5/27.
+ * Created by 光 on 2017/12/22.
  */
-public class FindFragment extends BaseFragment{
+
+public class TrainingFragment extends BaseFragment{
     private View view;//界面的布局
     private Context context;
     public static Bitmap[] bitmaps = DemoApplication.bitmaps;
@@ -49,7 +50,7 @@ public class FindFragment extends BaseFragment{
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_find,null);
+        view = inflater.inflate(R.layout.fragment_training,null);
         listView = (ListView) view.findViewById(R.id.find_list);
         if (isAdded()){
             list = new ArrayList<>();
