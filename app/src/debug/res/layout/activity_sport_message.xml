@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="mrkj.healthylife.activity.SportMessageActivity">
+    tools:context=".activity.SportMessageActivity">
     <include layout="@layout/title_layout"/>
 
     <LinearLayout
@@ -55,7 +55,7 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
                 android:textSize="@dimen/font_size_20"
-                android:text="您在KeepFit累计运动："/>
+                android:text="您在YiDaoGan累计运动："/>
             <TextView
                 android:id="@+id/sport_scores"
                 android:layout_width="match_parent"
