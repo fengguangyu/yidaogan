@@ -12,10 +12,12 @@ import android.support.v7.widget.RecyclerView.OnScrollListener;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.util.AttributeSet;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
+import com.wujingjingguanxueyuan.yidaogan.R;
 import com.wujingjingguanxueyuan.yidaogan.widget.footerView.BaseFooterView;
 import com.wujingjingguanxueyuan.yidaogan.widget.footerView.SimpleFooterView;
 
@@ -68,9 +70,9 @@ public class SwipeRecyclerView extends FrameLayout
 
         mFootView = new SimpleFooterView(getContext());
 
-//        View view = LayoutInflater.from(getContext()).inflate(R.layout.layout_swipe_recyclerview, this);
-//        mRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.SwipeRefreshLayout);
-//        recyclerView = (RecyclerView) view.findViewById(R.id.RecyclerView);
+        View view = LayoutInflater.from(getContext()).inflate(R.layout.layout_swipe_recyclerview, this);
+        mRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.SwipeRefreshLayout);
+        recyclerView = (RecyclerView) view.findViewById(R.id.RecyclerView);
         mLayoutManager = recyclerView.getLayoutManager();
 
         mRefreshLayout.setOnRefreshListener(this);
