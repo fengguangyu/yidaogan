@@ -98,10 +98,6 @@
 
         <service android:name=".service.StepCounterService" />
 
-        <activity
-            android:name=".activity.ShowBPMActivity"
-            android:screenOrientation="portrait"/>
-
         <service android:name=".service.RecordedSaveService" />
 
         <activity

@@ -1,4 +1,4 @@
-package com.ego.im4bmob.ui;
+package com.wujingjingguanxueyuan.yidaogan.activity;
 
 import android.app.ActivityOptions;
 import android.content.Intent;
@@ -14,11 +14,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.ego.im4bmob.R;
-import com.ego.im4bmob.bean.User;
-import com.ego.im4bmob.model.UserModel;
-import com.ego.im4bmob.mvp.bean.Installation;
-import com.ego.im4bmob.util.BmobUtils;
+import com.wujingjingguanxueyuan.yidaogan.R;
+import com.wujingjingguanxueyuan.yidaogan.bean.User;
+import com.wujingjingguanxueyuan.yidaogan.model.UserModel;
+import com.wujingjingguanxueyuan.yidaogan.mvp.bean.Installation;
+import com.wujingjingguanxueyuan.yidaogan.utils.BmobUtils;
 import com.orhanobut.logger.Logger;
 
 import java.util.List;

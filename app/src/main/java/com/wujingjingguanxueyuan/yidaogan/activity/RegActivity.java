@@ -1,4 +1,4 @@
-package com.ego.im4bmob.ui;
+package com.wujingjingguanxueyuan.yidaogan.activity;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -17,9 +17,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.ego.im4bmob.R;
-import com.ego.im4bmob.event.FinishEvent;
-import com.ego.im4bmob.model.UserModel;
+import com.wujingjingguanxueyuan.yidaogan.R;
+import com.wujingjingguanxueyuan.yidaogan.event.FinishEvent;
+import com.wujingjingguanxueyuan.yidaogan.model.UserModel;
 import com.orhanobut.logger.Logger;
 
 import org.greenrobot.eventbus.EventBus;
@@ -155,7 +155,7 @@ public class RegActivity extends AppCompatActivity {
                     finish();
                 } else {
                     Logger.e(e.getMessage() + "(" + e.getErrorCode() + ")");
-                    Toast.makeText(RegActivity.this,e.getMessage(),Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegActivity.this,e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             }
         });
