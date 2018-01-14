@@ -3,6 +3,7 @@ package com.wujingjingguanxueyuan.yidaogan.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -136,7 +137,7 @@ public class FunctionActivity extends BaseActivity implements RadioGroup.OnCheck
             training_btn.setChecked(true);
         }
     }
-
+    private Fragment mCurrentFragment = null;
     /**
      * 切换界面
      * @param group
@@ -148,27 +149,27 @@ public class FunctionActivity extends BaseActivity implements RadioGroup.OnCheck
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         switch (checkedId){
             case R.id.sport_btn://运动
-                if (!sportFragment.isAdded()){
+
                     Bundle bundle = new Bundle();
                     bundle.putBoolean("is_launch", false);
                     sportFragment.setArguments(bundle);
-                    transaction.replace(R.id.frag_home,sportFragment,Constant.SPORT_TAG);
-                }
+                    switchFragment(mCurrentFragment, sportFragment);
+
                 break;
             case R.id.training_btn://发现
-                if (!trainingFragment.isAdded()){
-                    transaction.replace(R.id.frag_home, trainingFragment,Constant.FIND_TAG);
-                }
+
+                    switchFragment(mCurrentFragment, trainingFragment);
+
                 break;
             case R.id.weather_btn://心率
-                if (!discoverFragment.isAdded()){
-                    transaction.replace(R.id.frag_home,discoverFragment,Constant.HEART_TAG);
-                }
+
+                    switchFragment(mCurrentFragment, discoverFragment);
+
                 break;
             case R.id.mine_btn://我的
-                if (!mineFragment.isAdded()){
-                    transaction.replace(R.id.frag_home,mineFragment,Constant.MINE_TAG);
-                }
+
+                switchFragment(mCurrentFragment, mineFragment);
+
                 break;
             default:
                 break;
@@ -212,5 +213,25 @@ public class FunctionActivity extends BaseActivity implements RadioGroup.OnCheck
             default:
         }
         return true;
+    }
+    public void switchFragment(Fragment from, Fragment to) {
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        if (mCurrentFragment == null) {
+            transaction.add(R.id.frag_home, to).commit();
+            mCurrentFragment = to;
+            return;
+        }
+        if (mCurrentFragment != to) {
+            mCurrentFragment = to;
+            if (!to.isAdded()) {
+                if (from.isAdded()) {
+                    transaction.hide(from).add(R.id.frag_home, to).commit();
+                } else {
+                    transaction.add(R.id.frag_home, to).commit();
+                }
+            } else {
+                transaction.hide(from).show(to).commit();
+            }
+        }
     }
 }
