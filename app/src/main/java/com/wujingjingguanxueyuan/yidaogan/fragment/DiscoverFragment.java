@@ -1,4 +1,4 @@
-package com.ego.im4bmob.ui.fragment;
+package com.wujingjingguanxueyuan.yidaogan.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,19 +8,18 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.ego.im4bmob.R;
-import com.ego.im4bmob.adapter.PostAdapter;
-import com.ego.im4bmob.base.ParentWithNaviFragment;
-import com.ego.im4bmob.event.RefreshPostEvent;
-import com.ego.im4bmob.mvp.bean.Post;
-import com.ego.im4bmob.mvp.presenter.ShowPostPresenter;
-import com.ego.im4bmob.mvp.view.ShowPostsView;
-import com.ego.im4bmob.ui.PublishPostActivity;
-import com.ego.im4bmob.widget.SwipeRecyclerView;
+import com.wujingjingguanxueyuan.yidaogan.R;
+import com.wujingjingguanxueyuan.yidaogan.activity.PublishPostActivity;
+import com.wujingjingguanxueyuan.yidaogan.adapter.PostAdapter;
+import com.wujingjingguanxueyuan.yidaogan.base.BaseFragment;
+import com.wujingjingguanxueyuan.yidaogan.event.RefreshPostEvent;
+import com.wujingjingguanxueyuan.yidaogan.mvp.bean.Post;
+import com.wujingjingguanxueyuan.yidaogan.mvp.presenter.ShowPostPresenter;
+import com.wujingjingguanxueyuan.yidaogan.mvp.view.ShowPostsView;
+import com.wujingjingguanxueyuan.yidaogan.widget.SwipeRecyclerView;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -33,21 +32,14 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+
 /**
  * Created on 17/9/12 21:26
  */
 
-public class DiscoverFragment extends ParentWithNaviFragment implements ShowPostsView {
+public class DiscoverFragment extends BaseFragment implements ShowPostsView {
+    private View rootView;
 
-
-    @Bind(R.id.v_top)
-    View mVTop;
-    @Bind(R.id.tv_left)
-    ImageView mTvLeft;
-    @Bind(R.id.tv_title)
-    TextView mTvTitle;
-    @Bind(R.id.tv_right)
-    TextView mTvRight;
     @Bind(R.id.swipe_recycle_post)
     SwipeRecyclerView mSwipeRecyclePost;
     @Bind(R.id.tv_error)
@@ -74,7 +66,6 @@ public class DiscoverFragment extends ParentWithNaviFragment implements ShowPost
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.fragment_discover, container, false);
-        initNaviView();
         ButterKnife.bind(this, rootView);
         mPosts = new ArrayList<>();
         mShowPostPresenter = new ShowPostPresenter(this);
@@ -117,10 +108,6 @@ public class DiscoverFragment extends ParentWithNaviFragment implements ShowPost
     public DiscoverFragment() {
     }
 
-    @Override
-    protected String title() {
-        return "发现";
-    }
 
     @Override
     public void onDestroyView() {

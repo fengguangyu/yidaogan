@@ -1,4 +1,4 @@
-package com.ego.im4bmob.ui;
+package com.wujingjingguanxueyuan.yidaogan.activity;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -17,21 +17,21 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.ego.im4bmob.R;
-import com.ego.im4bmob.adapter.CommentAdapter;
-import com.ego.im4bmob.adapter.LoveAdapter;
-import com.ego.im4bmob.base.BaseActivity;
-import com.ego.im4bmob.bean.User;
-import com.ego.im4bmob.event.DeleteCommentEvent;
-import com.ego.im4bmob.event.RefreshPostEvent;
-import com.ego.im4bmob.event.ReplyToEvent;
-import com.ego.im4bmob.mvp.bean.Comment;
-import com.ego.im4bmob.mvp.bean.Love;
-import com.ego.im4bmob.mvp.bean.Post;
-import com.ego.im4bmob.mvp.presenter.PostDetailsPresenter;
-import com.ego.im4bmob.mvp.view.PostDetailsView;
-import com.ego.im4bmob.util.BmobUtils;
-import com.ego.im4bmob.widget.SwipeRecyclerView;
+import com.wujingjingguanxueyuan.yidaogan.R;
+import com.wujingjingguanxueyuan.yidaogan.adapter.CommentAdapter;
+import com.wujingjingguanxueyuan.yidaogan.adapter.LoveAdapter;
+import com.wujingjingguanxueyuan.yidaogan.base.BaseActivity;
+import com.wujingjingguanxueyuan.yidaogan.bean.User;
+import com.wujingjingguanxueyuan.yidaogan.event.DeleteCommentEvent;
+import com.wujingjingguanxueyuan.yidaogan.event.RefreshPostEvent;
+import com.wujingjingguanxueyuan.yidaogan.event.ReplyToEvent;
+import com.wujingjingguanxueyuan.yidaogan.mvp.bean.Comment;
+import com.wujingjingguanxueyuan.yidaogan.mvp.bean.Love;
+import com.wujingjingguanxueyuan.yidaogan.mvp.bean.Post;
+import com.wujingjingguanxueyuan.yidaogan.mvp.presenter.PostDetailsPresenter;
+import com.wujingjingguanxueyuan.yidaogan.mvp.view.PostDetailsView;
+import com.wujingjingguanxueyuan.yidaogan.utils.BmobUtils;
+import com.wujingjingguanxueyuan.yidaogan.widget.SwipeRecyclerView;
 import com.orhanobut.logger.Logger;
 
 import org.greenrobot.eventbus.EventBus;
@@ -50,6 +50,8 @@ import cn.bmob.v3.BmobQuery;
 import cn.bmob.v3.BmobUser;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.PushListener;
+
+
 
 /**
  * Created on 17/8/31 16:53
@@ -163,6 +165,36 @@ public class PostDetailsActivity extends BaseActivity implements PostDetailsView
         }
     }
 
+    @Override
+    protected void setActivityTitle() {
+
+    }
+
+    @Override
+    protected void getLayoutToView() {
+
+    }
+
+    @Override
+    protected void initValues() {
+
+    }
+
+    @Override
+    protected void initViews() {
+
+    }
+
+    @Override
+    protected void setViewsListener() {
+
+    }
+
+    @Override
+    protected void setViewsFunction() {
+
+    }
+
     /**
      *
      */
@@ -191,7 +223,7 @@ public class PostDetailsActivity extends BaseActivity implements PostDetailsView
 
     @Override
     public void showError(Throwable throwable) {
-        Toast.makeText(this,throwable.getMessage(),Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,throwable.getMessage(), Toast.LENGTH_SHORT).show();
     }
 
     @Override

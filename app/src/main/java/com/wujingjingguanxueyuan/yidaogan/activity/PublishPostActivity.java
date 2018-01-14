@@ -1,4 +1,4 @@
-package com.ego.im4bmob.ui;
+package com.wujingjingguanxueyuan.yidaogan.activity;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -8,17 +8,20 @@ import android.text.TextUtils;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.wujingjingguanxueyuan.yidaogan.R;
+import com.wujingjingguanxueyuan.yidaogan.base.BaseActivity;
+import com.wujingjingguanxueyuan.yidaogan.event.RefreshPostEvent;
+import com.wujingjingguanxueyuan.yidaogan.mvp.presenter.PublishPostPresenter;
+import com.wujingjingguanxueyuan.yidaogan.mvp.view.PublishPostView;
+import com.wujingjingguanxueyuan.yidaogan.utils.BmobUtils;
+
 import org.greenrobot.eventbus.EventBus;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import com.ego.im4bmob.R;
-import com.ego.im4bmob.base.BaseActivity;
-import com.ego.im4bmob.event.RefreshPostEvent;
-import com.ego.im4bmob.mvp.presenter.PublishPostPresenter;
-import com.ego.im4bmob.mvp.view.PublishPostView;
-import com.ego.im4bmob.util.BmobUtils;
+
+
 
 /**
  * Created on 17/8/31 16:54
@@ -44,6 +47,36 @@ public class PublishPostActivity extends BaseActivity implements PublishPostView
         mToolBar.setTitleTextColor(ContextCompat.getColor(this, R.color.white));
         mToolBar.setBackgroundColor(ContextCompat.getColor(this, R.color.color_theme));
         mPublishPostPresenter = new PublishPostPresenter(this);
+    }
+
+    @Override
+    protected void setActivityTitle() {
+
+    }
+
+    @Override
+    protected void getLayoutToView() {
+
+    }
+
+    @Override
+    protected void initValues() {
+
+    }
+
+    @Override
+    protected void initViews() {
+
+    }
+
+    @Override
+    protected void setViewsListener() {
+
+    }
+
+    @Override
+    protected void setViewsFunction() {
+
     }
 
     @OnClick(R.id.btn_publish)

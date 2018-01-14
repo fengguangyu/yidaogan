@@ -1,4 +1,4 @@
-package com.ego.im4bmob.adapter;
+package com.wujingjingguanxueyuan.yidaogan.adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,14 +10,15 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.wujingjingguanxueyuan.yidaogan.R;
+import com.wujingjingguanxueyuan.yidaogan.mvp.bean.Post;
+import com.wujingjingguanxueyuan.yidaogan.activity.PostDetailsActivity;
 
 import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import com.ego.im4bmob.R;
-import com.ego.im4bmob.mvp.bean.Post;
-import com.ego.im4bmob.ui.PostDetailsActivity;
+
 
 /**
  * Created on 17/8/31 18:23

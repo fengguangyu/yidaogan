@@ -1,16 +1,17 @@
-package com.ego.im4bmob.mvp.view;
+package com.wujingjingguanxueyuan.yidaogan.view;
 
+
+import com.wujingjingguanxueyuan.yidaogan.mvp.bean.Comment;
+import com.wujingjingguanxueyuan.yidaogan.mvp.bean.Love;
+import com.wujingjingguanxueyuan.yidaogan.mvp.view.BmobView;
 
 import java.util.List;
-
-import com.ego.im4bmob.mvp.bean.Comment;
-import com.ego.im4bmob.mvp.bean.Love;
 
 /**
  * Created on 17/8/31 17:14
  */
 
-public interface PostDetailsView extends BmobView{
+public interface PostDetailsView extends BmobView {
     //评论相关
     void publishCommentSuccess();
     void deleteCommentSuccess();

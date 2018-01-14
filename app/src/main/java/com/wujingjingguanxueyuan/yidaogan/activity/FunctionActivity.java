@@ -17,7 +17,7 @@ import android.widget.Toast;
 
 import com.wujingjingguanxueyuan.yidaogan.R;
 import com.wujingjingguanxueyuan.yidaogan.base.BaseActivity;
-import com.wujingjingguanxueyuan.yidaogan.fragment.HeartFragment;
+import com.wujingjingguanxueyuan.yidaogan.fragment.DiscoverFragment;
 import com.wujingjingguanxueyuan.yidaogan.fragment.MineFragment;
 import com.wujingjingguanxueyuan.yidaogan.fragment.SportFragment;
 import com.wujingjingguanxueyuan.yidaogan.fragment.TrainingFragment;
@@ -39,7 +39,7 @@ public class FunctionActivity extends BaseActivity implements RadioGroup.OnCheck
     //碎片
     private SportFragment sportFragment;//运动
     private TrainingFragment trainingFragment;//发现
-    private HeartFragment heartFragment;//心率
+    private DiscoverFragment discoverFragment;//心率
     private MineFragment mineFragment;//我的
 
     private DrawerLayout mDrawerLayout;
@@ -71,7 +71,7 @@ public class FunctionActivity extends BaseActivity implements RadioGroup.OnCheck
         //实例化相关碎片
         sportFragment = new SportFragment();
         trainingFragment = new TrainingFragment();
-        heartFragment = new HeartFragment();
+        discoverFragment = new DiscoverFragment();
         mineFragment = new MineFragment();
         //初始化界面
         if (load_values == Constant.TURN_MAIN){
@@ -161,8 +161,8 @@ public class FunctionActivity extends BaseActivity implements RadioGroup.OnCheck
                 }
                 break;
             case R.id.weather_btn://心率
-                if (!heartFragment.isAdded()){
-                    transaction.replace(R.id.frag_home,heartFragment,Constant.HEART_TAG);
+                if (!discoverFragment.isAdded()){
+                    transaction.replace(R.id.frag_home,discoverFragment,Constant.HEART_TAG);
                 }
                 break;
             case R.id.mine_btn://我的

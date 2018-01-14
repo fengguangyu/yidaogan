@@ -149,6 +149,8 @@
             android:screenOrientation="portrait"/>
         <activity android:name=".activity.RegActivity"
             android:screenOrientation="portrait"/>
+        <activity android:name=".activity.PublishPostActivity"/>
+        <activity android:name=".activity.PostDetailsActivity"/>
     </application>
 
 </manifest>

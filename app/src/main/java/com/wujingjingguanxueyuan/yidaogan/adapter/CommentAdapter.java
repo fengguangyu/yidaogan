@@ -1,4 +1,4 @@
-package com.ego.im4bmob.adapter;
+package com.wujingjingguanxueyuan.yidaogan.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -10,6 +10,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.wujingjingguanxueyuan.yidaogan.R;
+import com.wujingjingguanxueyuan.yidaogan.bean.User;
+import com.wujingjingguanxueyuan.yidaogan.event.DeleteCommentEvent;
+import com.wujingjingguanxueyuan.yidaogan.event.ReplyToEvent;
+import com.wujingjingguanxueyuan.yidaogan.mvp.bean.Comment;
 
 import org.greenrobot.eventbus.EventBus;
 
@@ -17,12 +22,9 @@ import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import com.ego.im4bmob.R;
-import com.ego.im4bmob.bean.User;
-import com.ego.im4bmob.event.DeleteCommentEvent;
-import com.ego.im4bmob.event.ReplyToEvent;
-import com.ego.im4bmob.mvp.bean.Comment;
 import cn.bmob.v3.BmobUser;
+
+
 
 /**
  * Created on 17/9/1 12:08
